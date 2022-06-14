@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="canonical" href="https://html5-templates.com/" />
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="script.js"></script>	
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>Windows Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="desktop">
+		<div class="window closed" data-title="H<sub>2</sub>O">
+			<img src="animation/h20.jpg" alt="" >
+			<div class="buttonPos"></div>
+			<button class="openWindow" data-id="2">Optimise</button>
+		</div>
+		<div class="window closed" data-title="CO<sub>2</sub>">
+			<img src="animation/co2.jpg" alt="" >
+			<button class="openWindow" data-id="3">Optimise</button>
+		</div>
+	<!-- 	<div class="window closed" data-title="Third">
+		animation/water_mode1.gif
+			Third window starts closed
+		</div>  -->
+		
+		<div class="window closed" data-title="H<sub>2</sub>O Result"> 		<!--results windows-->
+			<img src="animation/h2o_results2.png" alt="" style="size: 10%;">
+			<div class="text">  </div>
+			<div class="text" style="font-size: 16px;"><b><u>	Results:</u></b></div> 
+			<div class="text">  </div>
+			<div class="text"><b>	Energies (Hartrees) </b> = -76.38 </div>
+			<div class="text"><b> 	O-H Atomic Distance (nm) </b> = 0.10 </div>
+			<div class="text"><b> 	H-O-H Bond Angle </b> = 106° </div>
+			<pre class="text" style="font-size: 20px;"><b><u>
+				Results Discussion:
+				</u></b></pre> 
+			<p class="text" style="text-align: left;">
+	<b> Status: </b>The molecule has been optimised successfully.
+
+	The molecule is optimised in its most stable conformation, which is a v-shaped conformer. 
+	The energies have been obtained in hartrees, which is a unit of measurement, and can be converted to other units of measurement. 
+	An energy profile diagram can then be obtained using these energies, such as the ones you have seen in the leaving certificate course.
+	
+	From the resulting data, we are able to: <br>
+		1. Calculate stable structures
+		2. Obtain properties of the molecule
+		3. Predict interactions 
+			</p>
+		</div>
+
+		<div class="window closed" data-title="CO<sub>2</sub> Result">
+			<img src="animation/co2_results2.png" alt="" >	
+			<div class="text">  </div>
+			<div class="text" style="font-size: 16px;"><b><u>	Results:</u></b></div> 
+			<div class="text">  </div>
+			<div class="text"><b> 	Energies (Hartrees) </b> = -188.52 </div>
+			<div class="text"><b> 	C-O Atomic Distance (nm) </b> = 0.12 </div>
+			<div class="text"><b> 	O-C-O Bond Angle </b> = 180° </div>
+			<pre class="text" style="font-size: 20px;"><b><u>
+			Results Discussion:
+			</u></b></pre> 
+			<p class="text" style="text-align: left;">
+	<b> Status: </b>The molecule has been optimised successfully.
+
+	The molecule is optimised in its most stable conformation, which is a linear conformer. 
+	The energies have been obtained in hartrees, which is a unit of measurement, and can be converted to other units of measurement. 
+	An energy profile diagram can then be obtained using these energies, such as the ones you have seen in the leaving certificate course.
+	
+	From the resulting data, we are able to: <br>
+		1. Calculate stable structures
+		2. Obtain properties of the molecule
+		3. Predict interactions 
+			</p>
+		</div>
+
+
+		
+		<div id="taskbar">		
+		</div>
+
+		<!--<div id="top">CHOOSE</div>-->
+		
+		<div id="icons">
+			<div class="backBox">
+				<div id="iconsA" style="padding-left: 16.5px; padding-top: 2.5px;">
+					<a class="openWindow" data-id="0"><br></a>
+					<p class="docFont">H<sub>2</sub>O.gjf</p>
+				</div>
+			</div>
+			<div style="padding: 15px"></div>
+			<div class="backBox">
+				<div id="iconsB" style="padding-left: 16.5px; padding-top: 2.5px;">
+					<a class="openWindow" data-id="1"><br></a>
+					<p class="docFont">CO<sub>2</sub>.gjf</p>
+				</div>
+			</div>
+			<!--<div style="padding: 15px"></div>
+			<div class="backBox">
+				<div id="iconsC" style="padding-left: 16.5px; padding-top: 2.5px;">
+					<a class="openWindow" data-id="*"><br></a>
+					<p class="docFont">Memes</p>
+				</div>
+			</div> -->
+			<div style="padding: 15px"></div>
+			<div class="backBox">
+				<div id="iconsD" style="padding-left: 16.5px; padding-top: 2.5px;">
+					<a class="openWindow" data-id="*"><br></a>
+					<p class="docFontB">Notepad</p> 
+				</div>
+			</div>
+			<div style="padding: 15px"></div>
+			<div class="backBox">
+				<div id="iconsE" style="padding-left: 20px; padding-top: 2.5px;" onclick="alert('hello')">
+					<a class="openWindow" data-id="*"><br></a>
+					<p class="docFont" style="padding-left: 12px">Bin</p> 
+				</div>
+			</div>
+			<div style="padding: 15px"></div>
+			<!-- Trigger the Modal -->
+			<div class="backBox">
+				<div id="mynewDiv">
+					<img id="myImg" src="animation/meme_pic.png" style="padding-left: 20px; opacity: 0;">
+				</div>
+				<p class="docFont" style="padding-left: 18px;">Memes</p>
+				<div>
+					<img id="myNImg" src="animation/memes2.png" style="left: 20px;top: 440px; position: absolute; ">
+				</div>
+			</div>	
+				<!-- The Modal -->
+				<div id="myModal" class="modal">
+				<!-- The Close Button -->
+				<span class="close">&times;</span>
+				<!-- Modal Content (The Image) -->
+				<img class="modal-content" id="img01">
+				<!-- Modal Caption (Image Text) -->
+				<div id="caption"></div>
+				</div>
+						</div>
+
+		<!--div id="opt_button">
+                        <button class="window">Optimise</button>
+                    
+                </div> -->
+		<a href="https://html5-templates.com/" rel="nofollow" target="_blank" id="templateLink">&copy; HTML5-Templates.com</a>	
+		<!-- You can use this template freely if you leave a visible link to HTML5-Templates.com -->
+		<p id="time"><span id='Curtime'></span></p>
+		<p id="date"><span id='Curdate'></span></p>
+			<script>
+				var today = new Date();
+				var time = today. getHours() + ":" + today. getMinutes();
+				var date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
+				document.getElementById('Curtime').innerHTML=time;
+				document.getElementById('Curdate').innerHTML=date;
+			</script>
+	</div>
+</body>
+
+</html>

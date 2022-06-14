@@ -1,0 +1,420 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+h1 {font-size: 1.5em;margin-bottom: 10px;}
+p{font-size: 1em;line-height: 1.3em;margin-bottom: 10px;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+
+#desktop {
+	font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-image: url('animation/windows_wallpaper.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+	overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.window {
+    position: absolute;
+    border: 2px solid rgb(5, 5, 5);
+    background: rgb(255, 255, 255);
+	border-radius: 5px;
+	z-index: 1000;
+}
+.window.closed {
+	display: none;
+}
+.window.minimizedWindow {
+	display: none;
+}
+.window.fullSizeWindow {
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    border-radius: 0;
+    bottom: 32px !important;
+}
+.fullSizeWindow .ui-resizable-handle {
+	display: none;
+}
+.windowHeader {
+    background-color: #b7b7e0;
+    text-align: right;
+    border-bottom: 2px solid #000;
+    padding: 2px;
+    cursor: move;
+    height: 28px;
+}
+.activeWindow .windowHeader {
+    background-color: #8888d6;
+}
+.windowHeader > span {
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid rgb(0, 0, 0);
+    margin-left: 4px;
+    font-size: 19px;
+    padding: 2px 10px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    border-radius: 5px;
+    line-height: 20px;
+    width: 12px;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.windowHeader > span:hover {
+	background: rgba(255,255,255,0.3);
+}
+.windowHeader > span.winclose:hover {
+	background: #e04545;
+}
+.windowHeader > span > span {
+    display: inline-block;
+    height: 8px;
+    width: 10px;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+}
+.winminimize > span {
+	border-bottom: 3px solid #000;
+}
+.winmaximize > span {
+	border: 2px solid #000;
+	border-top: 3px solid #000;
+}
+.winmaximize > span:nth-child(2) {
+	display: none;
+}
+.fullSizeWindow .winmaximize > span:nth-child(1) {
+	margin: 2px 0 0 -4px;
+}
+.fullSizeWindow .winmaximize > span:nth-child(2) {
+    display: inline-block;
+    top: 3px;
+    left: 12px;
+}
+.wincontent {
+    padding: 10px;
+    min-width: 200px;
+    min-height: 140px;
+    border: 2px solid #000;
+    margin: 2px;
+	border-radius: 0 0 5px 5px;
+}
+.windowHeader > strong {
+    float: left;
+    margin: 0px 3px 0 10px;
+    line-height: 29px;
+    font-size: 17px;
+}
+.taskbarPanel {
+    display: inline-block;
+    border: 2px solid #000;
+    border-radius: 5px;
+    line-height: 24px;
+    margin: 2px 0 0 10px;
+    font-size: 17px;
+    padding: 0 10px;
+    background: #CCC;
+    font-weight: bold;
+	cursor: pointer;
+}
+.taskbarPanel.activeTab {
+	background: #FFF;
+}
+.taskbarPanel.minimizedTab {
+	background: #AAA;	
+}
+.taskbarPanel.minimizedTab:hover {
+	background: #DDD;
+}
+.taskbarPanel.closed {
+	display: none;
+}
+.buttonPos{
+    padding: 5px;
+}
+/*.openWindow{
+    top: 300px;
+    margin-top:5px;
+    position: relative;
+}*/
+.opti{
+    margin: 0 auto;
+    width:30%;
+    display: block;
+}
+.docFont{
+    
+    color:rgba(255, 255, 255, 0);
+    font-size: 17px;
+    box-align: center;
+    text-shadow:-1px 1px #000000;
+    -webkit-text-stroke-width: 0.09px;
+    -webkit-text-stroke-color: black;
+}
+.docFontB{
+    
+    color:rgba(255, 255, 255, 0);
+    font-size: 17px;
+    box-align: center;
+    text-shadow:-1px 1px #000000;
+    -webkit-text-stroke-width: 0.09px;
+    -webkit-text-stroke-color: black;
+}
+.backBox{
+    width: 80px;
+    height: 80px;
+}
+
+.backBox:hover{
+    background-color: #7e98e3;
+}
+
+img{
+    margin: 0 auto;
+    display: block;
+    width: 70%;
+    height: 80%;
+}
+.text{
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+#taskbar {
+	position: absolute;
+	height: 32px;
+	border-top: 2px solid #000;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #EEE;
+    
+}
+#top{
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    background-color: rgb(207, 131, 131);
+    text-align: center;
+}
+#icons {
+	position: absolute;
+	z-index: 10;
+	top: 20px;
+	left: 20px;
+}
+#icons a {
+    display: block;
+    cursor: pointer;
+    padding: 2px 10px;
+    /*border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;*/
+    padding: 5px;
+}
+
+#iconsA a{
+    width: 40px;
+    height: 40px;
+	background-image: url('animation/windows_input2.png');
+	background-size: contain;
+}
+#iconsB a{
+	width: 40px;
+    height: 40px;
+	background-image: url('animation/windows_input2.png');
+	background-size: contain;
+}
+#iconsC a{
+	width: 40px;
+    height: 40px;
+	background-image: url('animation/memes2.png');
+	background-size: contain;
+}
+#iconsD a{
+	width: 40px;
+    height: 40px;
+	background-image: url('animation/instructions3.png');
+	background-size: contain;
+}
+#iconsE a{
+	width: 40px;
+    height: 40px;
+	background-image: url('animation/bin2.png');
+	background-size: contain;
+}
+#templateLink {
+    position: absolute;
+    display: inline-block;
+    bottom: 10px;
+    right: 100px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #30478c;
+}
+#time{
+    position: absolute;
+    font-size: 12px;
+    bottom: 5px;
+    right: 30px;
+}
+#date{
+    position: absolute;
+    font-size: 12px;
+    top: 97.85%;
+    right: 18px;
+}
+#opt_button {
+	position: absolute;
+	display: block;
+    	cursor: pointer;
+    	padding: 2px 10px;
+    	border: 2px solid #000;
+    	border-radius: 5px;
+    	padding: 5px;	
+}
+
+sub{
+    /* Specified in % so that the sup/sup is the right size relative to the surrounding text */
+    font-size: 75%;
+  
+    /* Zero out the line-height so that it doesn't interfere with the positioning that follows */
+    line-height: 0;
+  
+    /* Where the magic happens: makes all browsers position the sup/sup properly, relative to the surrounding text */
+    position: relative;
+  
+    /* Note that if you're using Eric Meyer's reset.css, this is already set and you can remove this rule */
+    vertical-align: baseline;
+  }
+
+sub {
+    /* Move the subscripted text down, but only half as far down as the superscript moved up */
+    bottom: -0.25em;
+}
+
+/*Demo styles BEGIN*/
+#window0 {	top: 35%;	left: 15%;}               /*return*/
+#window1 { 	top: 35%;      left: 48%;}	
+#window0 .wincontent {	width: 300px; height: 150px;	}
+#window1 .wincontent {	width: 300px; height: 150px;    }	
+@media screen and (max-width:960px){
+	#window0 {	left: 10px;	}
+}
+/*@media screen and (max-width:770px){
+	#window0 .wincontent {	width: 460px;	}
+	#window1 {	top: 190px;	left: -5px;	}
+}
+@media screen and (max-width:540px){
+#window0 .wincontent {	width: 230px; height: 200px;	}
+#window1 .wincontent {    width: auto;    height: 300px;	}
+}*/
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 80px;
+  height: 80px;
+}
+#myNImg {
+    border-radius: 5px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+  }
+#mynewDiv{
+    width:40px;
+    height:40px;
+}
+/*#myImg:hover {opacity: 0.7;}*/
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
